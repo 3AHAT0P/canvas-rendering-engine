@@ -1,11 +1,6 @@
-class Registry<K, V> extends Map<K, V> {
-  getOrThrow(key: K): V {
-    if (this.has(key)) return this.get(key)!;
+export * from './@types/index.d';
 
-    throw new Error(`Key '${key}' ios not defined in registry.`);
-  }
-};
-
-export const registry = new Registry();
-
-export const registerRender = (name: Symbol, renderFunction: ()) 
+export * from './BaseRenderInstruction';
+export * from './BaseRenderOperations';
+export * from './Renderer';
+export * from './utils';

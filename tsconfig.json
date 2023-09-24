@@ -17,7 +17,27 @@
     "strict": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
-    "noFallthroughCasesInSwitch": true
+    "noFallthroughCasesInSwitch": true,
+
+    "baseUrl": "./src",
+    "paths": {
+      "@/*": [
+        "./*"
+      ],
+      "@assets": [
+        "./assets"
+      ],
+      "@assets/*": [
+        "./assets/*"
+      ],
+      "@CRE": [
+        "./engine"
+      ],
+      "@CRE/*": [
+        "./engine/*"
+      ]
+    }
   },
-  "include": ["src"]
+  "include": ["src"],
+  "exclude": ["./vite.config.ts"]
 }

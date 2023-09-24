@@ -13,6 +13,8 @@
     "vite": "^4.4.5"
   },
   "dependencies": {
-    "@vue/reactivity": "^3.2.47"
+    "@typescript-eslint/eslint-plugin": "^6.7.2",
+    "@vue/reactivity": "^3.2.47",
+    "eslint": "^8.50.0"
   }
 }

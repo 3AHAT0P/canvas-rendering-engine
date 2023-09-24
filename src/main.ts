@@ -1,7 +1,7 @@
 import { effect, effectScope } from '@vue/reactivity';
 
+import { Renderer, buildAbsolutePosition } from '@CRE';
 import { AppElement } from './elements/AppElement';
-import { Renderer } from './engine/Renderer';
 import { throwError } from './utils';
 
 import './style.css';
@@ -29,7 +29,13 @@ const main = () => {
   const scope = effectScope();
 
   scope.run(() => {
-    const [symbol, buildRenderingInstructions] = AppElement(null);
+    const [symbol, buildRenderingInstructions] = AppElement({
+      position: buildAbsolutePosition(0, 0),
+      size: {
+        x: canvasElement.width,
+        y: canvasElement.height,
+      },
+    });
 
     effect(() => {
       renderer.addToRenderQueue(symbol, buildRenderingInstructions());

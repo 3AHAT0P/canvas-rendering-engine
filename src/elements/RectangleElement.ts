@@ -1,7 +1,6 @@
 import { type Ref, ref } from '@vue/reactivity';
 
-import { BaseRenderInstruction } from '../engine/BaseRenderInstruction';
-import { BaseRenderOperations } from '../engine/BaseRenderOperations';
+import { BaseRenderInstruction, BaseRenderOperations } from '@CRE';
 
 import { CRElement } from './Element';
 
@@ -32,7 +31,7 @@ export const RectangleElement: CRElement<Ref<RectOptions>> = (nodeOptions: Ref<R
   }, 100);
 
   const renderRectDSL = (): BaseRenderInstruction[] => {
-    let instructions: BaseRenderInstruction[] = [
+    const instructions: BaseRenderInstruction[] = [
       BaseRenderOperations.drawRect(nodeOptions.value.position.x, nodeOptions.value.position.y, nodeOptions.value.size.x, nodeOptions.value.size.y),
     ];
     if (bgColor.value != null) {
